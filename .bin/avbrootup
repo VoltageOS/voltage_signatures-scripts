@@ -1,0 +1,16 @@
+#!/usr/bin/sh -x
+
+rm -Rf avbroot LICENSE README.md
+
+FILE=$(curl -s https://api.github.com/repos/chenxiaolong/avbroot/releases/latest \
+| grep -e "https.*avbroot-.*linux-gnu.zip" \
+| cut -d : -f 2,3 \
+| tr -d \" \
+)
+
+aria2c --quiet=true --input-file=$FILE -d ./ -o avbroot.zip
+
+unzip avbroot.zip
+rm -Rf avbroot.zip
+
+chmod +x avbroot
