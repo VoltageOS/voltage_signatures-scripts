@@ -1,6 +1,6 @@
 #!/bin/sh
 
-AVBROOT=../../../prebuilts/tools-parasite/avbroot/avbroot
+AVBROOT=.bin/avbroot
 
 subject=$1
 if [ -z "$subject" ]
@@ -20,5 +20,5 @@ for x in bluetooth cts_uicc_2021 sdk_sandbox releasekey platform shared media ne
     ./make_key $outdir/$x "$subject" rsa; \
 done
 
-avbroot key extract-avb -k $outdir/releasekey-private.pem -o $outdir/avb_pkmd.bin
-avbroot key generate-cert -k $outdir/releasekey-private.pem -o $outdir/ota.crt
+$AVBROOT key extract-avb -k $outdir/releasekey-private.pem -o $outdir/avb_pkmd.bin
+$AVBROOT key generate-cert -k $outdir/releasekey-private.pem -o $outdir/ota.crt
