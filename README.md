@@ -1,4 +1,4 @@
-# vendor_parasite-signatures_scripts
+# vendor_voltage-signatures_scripts
 
 * Script to generate your own private keys for signing builds
 * Will generates following keys:<br>
@@ -7,7 +7,7 @@
 * Usage
 
 ```sh
-./generate-keys.sh '/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com' /home/foo/signatures
+./generate-keys.sh "/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com" /home/foo/signatures
 ```
 
 * References:
